@@ -1,4 +1,10 @@
 #include <iostream>
+#include <vector>
+#include "Pieza.h"
+#include "General.h"
+#include "Marine.h"
+#include <string>
+
 
 
 using namespace std; 
