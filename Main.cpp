@@ -128,6 +128,22 @@ int main() {
                 			}
                 			cout<<endl;
         			}*/
+				
+				int w = 0, f1, f2, c1, c2;
+				
+				while(w < 50){
+					cout << "Ingrese la fila de la pieza que desea mover: " << endl;
+					cin >> f1;
+					cout << "Ingrese la columna de la pieza que desea mover: " << endl;
+					cin >> c1;
+					cout << "Ingrese la fila a donde la desea mover: " << endl;
+					cin >> f2;
+					cout << "Ingrese la columna a donde la desea mover: " << endl;
+					cin >> c2;
+					matriz[f2][c2] = matriz[f1][c1];
+					matriz[f1][c1] = " ";
+					printMatrix(8, matriz);
+				}
 
                 		break;}
             		
@@ -142,41 +158,50 @@ int main() {
 }
 
 int menu(){
-    int opcion;
-    bool valido = true;
-    do{
-        cout << "  MENU" << endl
-             << "1.- Jugar" << endl
-             << "2.- Salir" <<  endl;
+	int opcion;
+	bool valido = true;
+	do{
+		cout << "  MENU" << endl
+		<< "1.- Jugar" << endl
+		<< "2.- Salir" <<  endl;
 
-        cout << "Ingrese una opción: ";
-        cin >> opcion;
+		cout << "Ingrese una opción: ";
+		cin >> opcion;
 
-        if (opcion > 0 && opcion < 5)
-            valido = true;
-        else {
-            cout << "Opción no válida, intente de nuevo ..." << endl;
-        }
-
-
-    }while(!valido);
-    return opcion;
+		if (opcion > 0 && opcion < 5)
+			valido = true;
+		else {
+			cout << "Opción no válida, intente de nuevo ..." << endl;
+		}
+	}while(!valido);
+	return opcion;
 }
 
 void printMatrix(int size, string** matrix){
-
-
-  for(int i=0;i<size;i++){
-     for(int j=0;j<size;j++){
-        cout<<" "<<matrix[i][j];
-
-     }
-     cout<<endl;
-  }
+	for(int i=0;i<size;i++){
+		for(int j=0;j<size;j++){
+			cout<<" "<<matrix[i][j];
+		}
+		cout<<endl;
+	}
 }
 
 
-
+/*cout << " Ingrese una fila: ";
+  cin >> row;
+  while(row < 0 || row > 5){
+        cout << "\n Debe ingresar de 0 a 5\n";
+        cout << " Ingrese una fila: ";
+        cin >> row;
+  }
+  cout << " Ingrese una columna: ";
+  cin >> column;
+  while(column < 0 || column > 6){
+  	cout << "\n Debe ingresar de 0 a 6\n";
+        cout << " Ingrese una columna: ";
+        cin >> column;
+  }
+*/
 
 
 
