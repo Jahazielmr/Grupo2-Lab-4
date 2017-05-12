@@ -9,6 +9,7 @@
 
 using namespace std; 
 int menu();
+void printMatrix(int, string**);
 
 int main() { 
 
@@ -42,7 +43,12 @@ int main() {
 
 	int f,c,d,e; 
 	char x; 
-	string matriz[8][8]; 
+	string** matriz = new string*[8];
+
+	for(int i = 0; i < 8; i++) {
+		matriz[i] = new string[8];
+	}
+
 	int piezas = 0;
 
 	bool salir = false;
@@ -114,24 +120,15 @@ int main() {
 			        matriz[7][6] = marineB12.getColor();
 			        matriz[7][7] = " ";
 				
-				/*for (c=0;c<8;c++){
-			                matriz[1][c]='P';
-                			matriz[6][c]='p';
-        			}
-
-        			for (f=2;f<6;f++){
-                			for(c=0;c<8;c++){
-                        			matriz[f][c]=' ';
-                			}
-        			}*/
-
+				printMatrix(8, matriz);
+				/*
         			for (f=0;f<8;f++){
                 			for (c=0;c<8;c++){
                         			cout<<matriz[f][c];
                 			}
                 			cout<<endl;
-        			}
-	
+        			}*/
+
                 		break;}
             		
 			case 2:
@@ -166,7 +163,17 @@ int menu(){
     return opcion;
 }
 
+void printMatrix(int size, string** matrix){
 
+
+  for(int i=0;i<size;i++){
+     for(int j=0;j<size;j++){
+        cout<<" "<<matrix[i][j];
+
+     }
+     cout<<endl;
+  }
+}
 
 
 
