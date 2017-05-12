@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-  Pieza::Pieza(){
-
-  }
+  
+Pieza::Pieza(){
+}
 
   Pieza::Pieza(string color){
     this-> color = color;
