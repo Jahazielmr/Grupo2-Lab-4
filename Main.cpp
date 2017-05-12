@@ -128,6 +128,50 @@ int main() {
                 			}
                 			cout<<endl;
         			}*/
+				
+				string p1, p2;
+				int cont=1;
+				bool N,B;//para saber si hay fichas de negro o blanco todavia				
+				
+				cout<<"Ingrese el nombre del jugador 1: "<<endl;	
+				cin>>p1;
+				cot<<"Ingrese el nombre del jugador 2: "<<endl;
+				cin>>p2;	
+				
+				//Evaluar si hay piezas todavia para que el juego acabe o no!				
+				
+				for(int i=0; i<8;i++){
+					for(int j=0; j<8;j++){
+						
+						
+					
+					}
+					
+					
+					
+				}
+				
+				
+				
+				//turnos	
+				do{
+					cout<< "Bienvenido al juego: ";	
+					
+					if(cont%2==2){
+						cout<<"Turno del jugador 2"<<p2;
+						
+					} else{
+						cout<<"Turno del jugador 1"<<p1;
+
+					}
+					
+					
+
+					
+				}while(N==true||B==true);
+				cout<<"El juego a terminado"<<endl;
+
+
 
                 		break;}
             		
