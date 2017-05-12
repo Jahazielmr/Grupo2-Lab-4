@@ -129,9 +129,7 @@ int main() {
                 			cout<<endl;
         			}*/
 				
-				int w = 0, f1, f2, c1, c2;
-				
-				while(w < 50){
+				/*while(w < 50){
 					cout << "Ingrese la fila de la pieza que desea mover: " << endl;
 					cin >> f1;
 					cout << "Ingrese la columna de la pieza que desea mover: " << endl;
@@ -143,7 +141,84 @@ int main() {
 					matriz[f2][c2] = matriz[f1][c1];
 					matriz[f1][c1] = " ";
 					printMatrix(8, matriz);
+				}*/
+
+				string p1, p2;
+				int cont = 1, f1, f2, c1, c2;
+				bool N = true, B = true;//para saber si hay fichas de negro o blanco todavia				
+				
+				cout << "Ingrese el nombre del jugador 1: "<<endl;	
+				cin >> p1;
+				cout << "Ingrese el nombre del jugador 2: "<<endl;
+				cin >> p2;
+				cout <<	"Bienvenidos al juego " << p1 << " y " << p2 << endl;
+				
+				//Evaluar si hay piezas todavia para que el juego acabe o no!				
+				
+				for(int i=0; i<8;i++){
+					for(int j=0; j<8;j++){
+						
+						
+					
+					}
+					
+					
+					
 				}
+				
+				
+				
+				//turnos	
+				do{
+					if(cont % 2 == 0){
+						cout<<"Turno del jugador 2: " << p2 << endl;
+						cout << "Ingrese la fila de la pieza que desea mover: " << endl;
+	                                        cin >> f1;
+        	                                cout << "Ingrese la columna de la pieza que desea mover: " << endl;
+                	                        cin >> c1;
+                        	                cout << "Ingrese la fila a donde la desea mover: " << endl;
+                                	        cin >> f2;
+                                        	cout << "Ingrese la columna a donde la desea mover: " << endl;
+	                                        cin >> c2;
+        	                                matriz[f2][c2] = matriz[f1][c1];
+                	                        matriz[f1][c1] = " ";
+						if (matriz[f1 + 1][c1 + 1] == "B"){
+							matriz[f1 + 1][c1 + 1] = " ";
+							matriz[f1 + 2][c1 + 2] = "N";
+						}
+						if (matriz[f1 + 1][c1 - 1] == "B"){
+							matriz[f1 + 1][c1 - 1] = " ";
+							matriz[f1 + 2][c1 - 2] = "N";
+						}
+                        	                printMatrix(8, matriz);
+					} else{
+						cout<<"Turno del jugador 1: " << p1 << endl;
+						cout << "Ingrese la fila de la pieza que desea mover: " << endl;
+	                                        cin >> f1;
+	                                        cout << "Ingrese la columna de la pieza que desea mover: " << endl;
+        	                                cin >> c1;
+                	                        cout << "Ingrese la fila a donde la desea mover: " << endl;
+                        	                cin >> f2;
+                                	        cout << "Ingrese la columna a donde la desea mover: " << endl;
+                                        	cin >> c2;
+                                        	matriz[f2][c2] = matriz[f1][c1];
+                                        	matriz[f1][c1] = " ";
+						if (matriz[f1 - 1][c1 - 1] == "N"){
+							matriz[f1 - 1][c1 - 1] = " ";
+							matriz[f1 - 2][c1 - 2] = "B";
+						}
+						if (matriz[f1 - 1][c1 + 1] == "N"){
+							matriz[f1 - 1][c1 + 1] = " ";
+							matriz[f1 - 2][c1 + 2] = "B";
+						}
+                                        	printMatrix(8, matriz);
+					}
+					cont++;
+				} while(N == true|| B == true);
+				cout<<"El juego a terminado"<<endl;
+
+
+
 
                 		break;}
             		
