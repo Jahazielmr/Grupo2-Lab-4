@@ -15,8 +15,6 @@ int main() {
 //Crear las piezas;
 
 	Marine marineN1("N");
-  	
-	Marine marineN1("N");
 	Marine marineN2("N");
 	Marine marineN3("N");
 	Marine marineN4("N");
@@ -51,7 +49,89 @@ int main() {
     	while (!salir){
         	switch(menu()){
             		case 1:{
+				matriz[0][0] = " ";
+			        matriz[0][1] = marineN1.getColor();
+        			matriz[0][2] = " ";
+	        		matriz[0][3] = marineN2.getColor();
+        			matriz[0][4] = " ";
+	        		matriz[0][5] = marineN3.getColor();
+        			matriz[0][6] = " ";
+	        		matriz[0][7] = marineN4.getColor();
+        			matriz[1][0] = marineN5.getColor();
+			        matriz[1][1] = " ";
+			        matriz[1][2] = marineN6.getColor();
+			        matriz[1][3] = " ";
+			        matriz[1][4] = marineN7.getColor();
+			        matriz[1][5] = " ";
+			        matriz[1][6] = marineN8.getColor();
+			        matriz[1][7] = " ";
+			        matriz[2][0] = " ";
+			        matriz[2][1] = marineN9.getColor();
+			        matriz[2][2] = " ";
+			        matriz[2][3] = marineN10.getColor();
+			        matriz[2][4] = " ";
+			        matriz[2][5] = marineN11.getColor();
+			        matriz[2][6] = " ";
+			        matriz[2][7] = marineN12.getColor();
+			        matriz[3][0] = " ";
+			        matriz[3][1] = " ";
+			        matriz[3][2] = " ";
+			        matriz[3][3] = " ";
+			        matriz[3][4] = " ";
+			        matriz[3][5] = " ";
+			        matriz[3][6] = " ";
+			        matriz[3][7] = " ";
+			        matriz[4][0] = " ";
+			        matriz[4][1] = " ";
+ 			        matriz[4][2] = " ";
+ 			        matriz[4][3] = " ";
+			        matriz[4][4] = " ";
+			        matriz[4][5] = " ";
+			        matriz[4][6] = " ";
+			        matriz[4][7] = " ";
+				matriz[5][0] = marineB1.getColor();
+			        matriz[5][1] = " ";
+			        matriz[5][2] = marineB2.getColor();
+			        matriz[5][3] = " ";
+			        matriz[5][4] = marineB3.getColor();
+			        matriz[5][5] = " ";
+			        matriz[5][6] = marineB4.getColor();
+			        matriz[5][7] = " ";
+			        matriz[6][0] = " ";
+			        matriz[6][1] = marineB5.getColor();
+			        matriz[6][2] = " ";
+			        matriz[6][3] = marineB6.getColor();
+			        matriz[6][4] = " ";
+			        matriz[6][5] = marineB7.getColor();
+			        matriz[6][6] = " ";
+			        matriz[6][7] = marineB8.getColor();
+			        matriz[7][0] = marineB9.getColor();
+			        matriz[7][1] = " ";
+			        matriz[7][2] = marineB10.getColor();
+			        matriz[7][3] = " ";
+			        matriz[7][4] = marineB11.getColor();
+			        matriz[7][5] = " ";
+			        matriz[7][6] = marineB12.getColor();
+			        matriz[7][7] = " ";
 				
+				/*for (c=0;c<8;c++){
+			                matriz[1][c]='P';
+                			matriz[6][c]='p';
+        			}
+
+        			for (f=2;f<6;f++){
+                			for(c=0;c<8;c++){
+                        			matriz[f][c]=' ';
+                			}
+        			}*/
+
+        			for (f=0;f<8;f++){
+                			for (c=0;c<8;c++){
+                        			cout<<matriz[f][c];
+                			}
+                			cout<<endl;
+        			}
+	
                 		break;}
             		
 			case 2:
@@ -59,47 +139,6 @@ int main() {
                 		break;
 		}//Fin switch
 	}//Fin while
-
-
-
-	matriz[0][0]=' '; 
-	matriz[0][1]= marineN1.getColor(); 
-	matriz[0][2]=' '; 
-	matriz[0][3]='N'; 
-	matriz[0][4]=' '; 
-	matriz[0][5]='N'; 
-	matriz[0][6]=' '; 
-	matriz[0][7]='N'; 
-	matriz[1][0]='N';
-	matriz[1][1]=' '; 
-	matriz[6][0]='p'; 
-	matriz[2][0]=' '; 
-	matriz[7][0]='t'; 
-	matriz[7][1]='c'; 
-	matriz[7][2]='a'; 
-	matriz[7][3]='k'; 
-	matriz[7][4]='q'; 
-	matriz[7][5]='a'; 
-	matriz[7][6]='c'; 
-	matriz[7][7]='t'; 
-
-	for (c=0;c<8;c++){ 
-		matriz[1][c]='P'; 
-		matriz[6][c]='p'; 
-	} 
-	
-	for (f=2;f<6;f++){ 
-		for(c=0;c<8;c++){ 
-			matriz[f][c]=' '; 
-		} 
-	} 
-
-	for (f=0;f<8;f++){ 
-		for (c=0;c<8;c++){ 
-			cout<<matriz[f][c]; 
-		} 
-		cout<<endl; 
-	} 
 
 	//system("PAUSE"); 
 	return 0; 
