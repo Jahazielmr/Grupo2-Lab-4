@@ -10,6 +10,8 @@
 using namespace std; 
 int menu();
 void printMatrix(int, string**);
+bool convertirRey(int, string**);
+bool Acabar;
 
 int main() { 
 
@@ -220,6 +222,43 @@ void printMatrix(int size, string** matrix){
 }
 
 
+bool convertirRey(string** matrix, int size){
+	
+        		if(matrix[0][1]||matrix[0][3]||matrix[0][5]||matrix[0][7]=="B"){
+				return true;
+
+			}else if(matrix[7][0]||matrix[7][2]||matrix[7][4]||matrix[7][6]=="N"){
+				return true;
+
+			}else{
+				return false;
+
+			}
+
+     		
+  	
+}
+	
+bool Acabar(string** matrix, int size){
+
+	int contN;
+	int contB;
+	
+	 for(int i=0;i<size;i++){
+     		for(int j=0;j<size;j++){
+      			if(matrix[i][j]=="N"){
+				contN++;
+			}else if(matrix[i][j]=="B"){
+				contB++;
+			}	
+     		}
+ 	 }
+	
+	if(contN==0||contB==0){
+		return true;
+	}
+
+}
 
 
 
