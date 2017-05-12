@@ -11,9 +11,40 @@ using namespace std;
 int menu();
 
 int main() { 
+
+//Crear las piezas;
+
+	Marine marineN1("N");
+  	
+	Marine marineN1("N");
+	Marine marineN2("N");
+	Marine marineN3("N");
+	Marine marineN4("N");
+	Marine marineN5("N");
+	Marine marineN6("N");
+	Marine marineN7("N");
+	Marine marineN8("N");
+	Marine marineN9("N");
+	Marine marineN10("N");
+	Marine marineN11("N");
+	Marine marineN12("N");
+
+	Marine marineB1("B");
+	Marine marineB2("B");
+	Marine marineB3("B");
+	Marine marineB4("B");
+	Marine marineB5("B");
+	Marine marineB6("B");
+	Marine marineB7("B");
+	Marine marineB8("B");
+	Marine marineB9("B");
+	Marine marineB10("B");
+	Marine marineB11("B");
+	Marine marineB12("B");
+
 	int f,c,d,e; 
 	char x; 
-	char matriz[8][8]; 
+	string matriz[8][8]; 
 	int piezas = 0;
 
 	bool salir = false;
@@ -32,7 +63,7 @@ int main() {
 
 
 	matriz[0][0]=' '; 
-	matriz[0][1]='N'; 
+	matriz[0][1]= marineN1.getColor(); 
 	matriz[0][2]=' '; 
 	matriz[0][3]='N'; 
 	matriz[0][4]=' '; 
@@ -95,6 +126,10 @@ int menu(){
     }while(!valido);
     return opcion;
 }
+
+
+
+
 
 
 
