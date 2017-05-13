@@ -157,16 +157,6 @@ int main() {
 				
 				//Evaluar si hay piezas todavia para que el juego acabe o no!				
 				
-				for(int i=0; i<8;i++){
-					for(int j=0; j<8;j++){
-						
-						
-					
-					}
-					
-					
-					
-				}
 				
 				
 				
@@ -204,6 +194,7 @@ int main() {
 							si2 = Acabar(matriz, 8);
 							if (si2 == true) {
 								N = false;
+								cout<<"Ha ganado el player 1"<<p1;
 							}
 						}
 					} else{
@@ -238,6 +229,7 @@ int main() {
 							sip2 = Acabar(matriz, 8);
 							if (sip2 == true) {
 								B = false;
+								cout<<"Ha ganado el player 2"<<p2;
 							}
 						}
 					}
