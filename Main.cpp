@@ -10,6 +10,8 @@
 using namespace std; 
 int menu();
 void printMatrix(int, string**);
+bool convertirRey(string**, int);
+bool Acabar(string**, int);
 
 int main() { 
 
@@ -180,17 +182,30 @@ int main() {
                                 	        cin >> f2;
                                         	cout << "Ingrese la columna a donde la desea mover: " << endl;
 	                                        cin >> c2;
-        	                                matriz[f2][c2] = matriz[f1][c1];
-                	                        matriz[f1][c1] = " ";
-						if (matriz[f1 + 1][c1 + 1] == "B"){
-							matriz[f1 + 1][c1 + 1] = " ";
-							matriz[f1 + 2][c1 + 2] = "N";
+						if (f1 > 7 || c1 > 7){
+							cout << "Las coordenadas son demasiado grandes" << endl;
+						} else {
+        	                                	matriz[f2][c2] = matriz[f1][c1];
+	                	                        matriz[f1][c1] = " ";
+							if (matriz[f1 + 1][c1 + 1] == "B"){
+								matriz[f1 + 1][c1 + 1] = " ";
+								matriz[f1 + 2][c1 + 2] = "N";
+							}
+							if (matriz[f1 + 1][c1 - 1] == "B"){
+								matriz[f1 + 1][c1 - 1] = " ";
+								matriz[f1 + 2][c1 - 2] = "N";
+							}
+                        		                printMatrix(8, matriz);
+							bool si, si2;
+							si = convertirRey(matriz, 8);
+							if (si == true) {
+								matriz[f2][c2] = "GN";
+							}
+							si2 = Acabar(matriz, 8);
+							if (si2 == true) {
+								N = false;
+							}
 						}
-						if (matriz[f1 + 1][c1 - 1] == "B"){
-							matriz[f1 + 1][c1 - 1] = " ";
-							matriz[f1 + 2][c1 - 2] = "N";
-						}
-                        	                printMatrix(8, matriz);
 					} else{
 						cout<<"Turno del jugador 1: " << p1 << endl;
 						cout << "Ingrese la fila de la pieza que desea mover: " << endl;
@@ -201,20 +216,33 @@ int main() {
                         	                cin >> f2;
                                 	        cout << "Ingrese la columna a donde la desea mover: " << endl;
                                         	cin >> c2;
-                                        	matriz[f2][c2] = matriz[f1][c1];
-                                        	matriz[f1][c1] = " ";
-						if (matriz[f1 - 1][c1 - 1] == "N"){
-							matriz[f1 - 1][c1 - 1] = " ";
-							matriz[f1 - 2][c1 - 2] = "B";
+						if (f1 > 7 || c1 > 7) {
+							cout << "Las coordenadas son demasiado grandes" << endl;
+						} else {
+	                                        	matriz[f2][c2] = matriz[f1][c1];
+        	                                	matriz[f1][c1] = " ";
+							if (matriz[f1 - 1][c1 - 1] == "N"){
+								matriz[f1 - 1][c1 - 1] = " ";
+								matriz[f1 - 2][c1 - 2] = "B";
+							}
+							if (matriz[f1 - 1][c1 + 1] == "N"){
+								matriz[f1 - 1][c1 + 1] = " ";
+								matriz[f1 - 2][c1 + 2] = "B";
+							}
+                	                        	printMatrix(8, matriz);
+							bool sip, sip2;
+							sip = convertirRey(matriz, 8);
+                                        	        if (sip == true) {
+                                                	        matriz[f2][c2] = "GB";
+	                                                }
+							sip2 = Acabar(matriz, 8);
+							if (sip2 == true) {
+								B = false;
+							}
 						}
-						if (matriz[f1 - 1][c1 + 1] == "N"){
-							matriz[f1 - 1][c1 + 1] = " ";
-							matriz[f1 - 2][c1 + 2] = "B";
-						}
-                                        	printMatrix(8, matriz);
 					}
 					cont++;
-				} while(N == true|| B == true);
+				} while(N == true || B == true);
 				cout<<"El juego a terminado"<<endl;
 
 
@@ -261,24 +289,33 @@ void printMatrix(int size, string** matrix){
 	}
 }
 
+bool convertirRey(string** matrix, int size){
+	if (matrix[0][1] == "B" || matrix[0][3] == "B" || matrix[0][5] == "B" || matrix[0][7] == "B"){
+		return true;
+	} else if (matrix[7][0] == "N" || matrix[7][2] == "N" || matrix[7][4] == "N" || matrix[7][6] == "N"){
+		return true;
+	} else {
+		return false;
+	}
+}
+	
+bool Acabar(string** matrix, int size){
+	int contN=0;
+	int contB=0;
+	for(int i=0;i<size;i++){
+     		for(int j=0;j<size;j++){
+      			if(matrix[i][j] == "N") {
+				contN++;
+			} else if (matrix[i][j]=="B") {
+				contB++;
+			}	
+     		}
+ 	}
+	if(contN==0||contB==0){
+		return true;
+	}else{
 
-/*cout << " Ingrese una fila: ";
-  cin >> row;
-  while(row < 0 || row > 5){
-        cout << "\n Debe ingresar de 0 a 5\n";
-        cout << " Ingrese una fila: ";
-        cin >> row;
-  }
-  cout << " Ingrese una columna: ";
-  cin >> column;
-  while(column < 0 || column > 6){
-  	cout << "\n Debe ingresar de 0 a 6\n";
-        cout << " Ingrese una columna: ";
-        cin >> column;
-  }
-*/
+		return false;
 
-
-
-
-//crear, jugar, salir
+	}
+}
